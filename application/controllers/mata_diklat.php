@@ -19,10 +19,11 @@ class Mata_diklat extends CI_Controller {
 		load_view('main',$parse,FALSE);
 	}
 
-	public function add()
+	public function add($id="")
 	{
+		$post = $this->input->post();
 		$parse = array();
-		$parse['query'] 	= $this->default_model->getData('mata_diklat');
+		$parse['query'] 	= $this->default_model->getData('mata_diklat',array('id'=>$id));
 		$parse['content']	= 'add/mata_diklat';
 
 		load_view('main',$parse,FALSE);
@@ -33,9 +34,17 @@ class Mata_diklat extends CI_Controller {
 		$object = array();
 		$post = $this->input->post();
 
+		if (!empty($post['id'])) {
+		$object['nama'] = $post['nama'];
+		$this->default_model->updateData('mata_diklat',$object,$post['id']);
+		}
+		else
+		{
 		$object['nama'] = $post['nama'];
 		$this->default_model->insertData('mata_diklat',$object);
-		redirect('mata_diklat');
+		}
+
+		redirect('mata_diklat');		
 	}
 
 	public function delete($id="")

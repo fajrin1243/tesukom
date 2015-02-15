@@ -6,7 +6,7 @@ class Default_model extends CI_Model {
 	{
 		if (!empty($condition)) 
 		{
-			$query = $this->db->get_where($table, array($parameter));
+			$query = $this->db->get_where($table, $condition);
 		}
 		else
 		{
@@ -20,6 +20,12 @@ class Default_model extends CI_Model {
 	{
 		$this->db->insert($table, $object);
 		return $this->db->insert_id();
+	}
+
+	function updateData($table="",$object="",$id="")
+	{
+		$query = $this->db->update($table, $object, array('id' => $id));
+		return $query;
 	}
 
 	function deleteData($table="",$params="")
