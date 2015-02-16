@@ -3,8 +3,8 @@
 class Default_model extends CI_Model {
 
 	public function record_count($table="") {
-        return $this->db->count_all($table);
-    }
+		return $this->db->count_all($table);
+	}
 
 	function getData($table='',$condition='')
 	{
@@ -16,6 +16,17 @@ class Default_model extends CI_Model {
 		{
 			$query = $this->db->get($table);
 		}
+
+		return $query->result_array();
+	}
+
+	function getJoin($column="",$table1="",$table2="",$params)
+	{
+		$this->db->select($column);
+		$this->db->from($table1);
+		$this->db->join($table2, $params);
+
+		$query = $this->db->get();
 
 		return $query->result_array();
 	}
