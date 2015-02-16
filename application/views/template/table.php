@@ -10,7 +10,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php echo load_view($data, '', FALSE) ?>
+		<?php 
+		echo load_view($data, '', FALSE);
+		?>
 	</tbody>
 </table>
 
+ <div class="halaman">Halaman : <?php echo $halaman;?></div>

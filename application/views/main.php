@@ -11,6 +11,14 @@
 </head>
 <body>
 	<?php 
+	//echo $this->session->userdata('username');
+	foreach ($level as $value) {
+		
+	}
+	$levels = $value['level'];
+	if ($levels==1) {
+		echo 'a';
+	}
 	echo load_view('template/navigation','',FALSE); 
 	echo load_view($content,'',FALSE);
 	?>

@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'tamanduta';
+$db['default']['password'] = '';
 $db['default']['database'] = 'ukom';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

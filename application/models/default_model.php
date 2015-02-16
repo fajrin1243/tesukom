@@ -2,6 +2,10 @@
 
 class Default_model extends CI_Model {
 
+	public function record_count($table="") {
+        return $this->db->count_all($table);
+    }
+
 	function getData($table='',$condition='')
 	{
 		if (!empty($condition)) 
