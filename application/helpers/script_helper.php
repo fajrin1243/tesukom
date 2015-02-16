@@ -40,6 +40,14 @@ function div_close()
 	return $var;
 }
 
+function action($controller = '',$row='')
+{
+	
+	$var = "<li><a href='".base_url()."index.php/".$controller."/add/".$row."'><i class='fa fa-pencil'> </i>  Edit</a></li>
+	<li><a href='".base_url()."index.php/".$controller."/delete/".$row."'><i class='fa fa-trash-o'> </i>  Delete</a></td></li>";
+	return $var;
+}
+
 function pdf_create($html, $filename='', $paper, $orientation, $stream=TRUE) 
 {
     require_once("dompdf/dompdf_config.inc.php");
