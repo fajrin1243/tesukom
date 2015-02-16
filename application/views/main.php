@@ -7,8 +7,6 @@
 	echo load_css('bootstrap.css','',FALSE);
 	echo load_css('font-awesome.css','',FALSE);
 	echo empty($this->session->userdata('username'))  ? load_css('style.css','',FALSE) : "";
-	echo load_js('jquery.min.js','',FALSE);
-	echo load_js('bootstrap.min.js','',FALSE);
 	?>
 </head>
 <body>
@@ -21,14 +19,19 @@
 		}
 		$levels = $value['level'];
 		if ($levels==0) {
-			echo 'a';
 		}
 	}
 	else
 	{
 
 	}
+	echo div_open('container');
+	echo div_open('row');
 	echo load_view($content,'',FALSE);
+	echo div_close();
+	echo div_close();
+	echo load_js('jquery.min.js','',FALSE);
+	echo load_js('bootstrap.min.js','',FALSE);
 	?>
 
 </body>

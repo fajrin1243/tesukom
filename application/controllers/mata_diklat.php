@@ -9,6 +9,18 @@ class Mata_diklat extends CI_Controller {
 		$this->is_logged_in();
 	}
 
+	public function test()
+	{
+		$tables = $this->db->list_tables();
+
+		foreach ($tables as $table)
+		{
+			$data[] = $table;
+		}
+
+		echo implode('</br>', $data);
+	}
+
 	public function index($id="")
 	{
 		//$config = array();
@@ -19,6 +31,7 @@ class Mata_diklat extends CI_Controller {
 
 		$parse = array();
 		//$parse['query'] 	= $this->default_model->getData('mata_diklat','',$config['per_page'], $id);
+		$parse['controller'] = 'mata_diklat';
 		$parse['level']		= $this->default_model->getData('users',array('username'=>$this->session->userdata('username')));
 		$parse['query'] 	= $this->default_model->getData('mata_diklat');
 		$parse['content']	= 'template/table';
@@ -33,6 +46,7 @@ class Mata_diklat extends CI_Controller {
 	{
 		$post = $this->input->post();
 		$parse = array();
+		$parse['level']		= $this->default_model->getData('users',array('username'=>$this->session->userdata('username')));
 		$parse['query'] 	= $this->default_model->getData('mata_diklat',array('id'=>$id));
 		$parse['content']	= 'add/mata_diklat';
 

@@ -1,5 +1,5 @@
 <table class="table">
-<a href="<?php echo base_url()?>index.php/mata_diklat/add"><button type="button" class="btn btn-primary">Tambah Data</button></a>
+<a href="<?php echo base_url()."index.php/".$controller."/add"?>"><button type="button" class="btn btn-primary"><i class='fa fa-plus-circle'></i> Tambah Data</button></a>
 <thead>
 		<tr>
 			<?php foreach ($field as $column) 
