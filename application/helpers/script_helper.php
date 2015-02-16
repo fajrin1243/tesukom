@@ -28,6 +28,18 @@ if(!function_exists('load_view'))
 	}
 }
 
+function div_open($file="")
+{
+	$var = "<div class='".$file."'>";
+	return $var;
+}
+
+function div_close()
+{
+	$var = "</div>";
+	return $var;
+}
+
 function pdf_create($html, $filename='', $paper, $orientation, $stream=TRUE) 
 {
     require_once("dompdf/dompdf_config.inc.php");
